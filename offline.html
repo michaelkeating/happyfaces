@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Happy Faces - Offline</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .offline-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .offline-emoji {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+        
+        .offline-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .offline-message {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        .retry-button {
+            background-color: #5856D6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="offline-container">
+        <div class="offline-emoji">📶</div>
+        <div class="offline-title">You're Offline</div>
+        <div class="offline-message">Happy Faces can't connect to the internet right now.</div>
+        <button class="retry-button" onclick="window.location.reload()">Try Again</button>
+    </div>
+</body>
+</html>

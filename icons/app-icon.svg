@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="256" fill="#5856D6"/>
+  
+  <!-- Emoji face -->
+  <circle cx="256" cy="256" r="180" fill="#FFDD67"/>
+  
+  <!-- Eyes -->
+  <circle cx="186" cy="206" r="30" fill="#664E27"/>
+  <circle cx="326" cy="206" r="30" fill="#664E27"/>
+  
+  <!-- Smile -->
+  <path d="M256,340 C200,340 160,310 140,280 C160,320 200,380 256,380 C312,380 352,320 372,280 C352,310 312,340 256,340 Z" fill="#664E27"/>
+</svg>

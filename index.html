@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Happy Faces - Toddler Emoji App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Nunito:wght@700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#5856D6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Happy Faces">
+    <link rel="apple-touch-icon" href="icons/app-icon.svg">
+    <link rel="icon" type="image/svg+xml" href="icons/app-icon.svg">
+</head>
+<body>
+    <div class="ios-container">
+        <div class="ios-status-bar">
+            <div class="status-bar-time">9:41</div>
+            <div class="status-icons">
+                <span class="signal">📶</span>
+                <span class="wifi">📡</span>
+                <span class="battery">🔋</span>
+            </div>
+        </div>
+
+        <header class="app-header">
+            <h1>😊 Happy Faces 😁</h1>
+        </header>
+
+        <div class="app-container">
+            <!-- Message display area -->
+            <div class="message-container">
+                <div id="current-message" class="current-message"></div>
+            </div>
+
+            <!-- Category tabs -->
+            <div class="category-tabs">
+                <div class="tab active" data-category="faces">😊😄😍</div>
+                <div class="tab" data-category="animals">🐶🐱🦁</div>
+                <div class="tab" data-category="food">🍎🍕🍦</div>
+                <div class="tab" data-category="activities">⚽️🎨🏊</div>
+                <div class="tab" data-category="travel">🚗✈️🚢</div>
+                <div class="tab" data-category="objects">🎮📱💻</div>
+            </div>
+
+            <!-- Emoji grid -->
+            <div class="emoji-grid" id="emoji-grid">
+                <!-- Emojis will be loaded here by JavaScript -->
+            </div>
+
+            <!-- Control buttons -->
+            <div class="control-buttons">
+                <button id="delete-btn" class="control-btn delete-btn">🗑</button>
+                <button id="new-btn" class="control-btn new-btn">➕</button>
+                <button id="history-btn" class="control-btn history-btn">📚</button>
+                <button id="save-btn" class="control-btn save-btn">💾</button>
+            </div>
+        </div>
+
+        <!-- Message history modal -->
+        <div id="history-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>📚 Message History</h2>
+                    <span class="close-modal">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div id="history-list" class="history-list">
+                        <!-- History items will be added here by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- iOS-style home button -->
+        <div class="home-button"></div>
+        
+        <!-- PWA Install Button (hidden by default) -->
+        <div id="install-container" class="install-container" style="display: none;">
+            <button id="install-btn" class="install-btn">Install App 📱</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

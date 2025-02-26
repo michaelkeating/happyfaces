@@ -1,0 +1,443 @@
+/* Reset and common styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: #f2f2f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* iOS device frame */
+.ios-container {
+    position: relative;
+    width: 375px;
+    height: 750px;
+    background-color: white;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    border: 8px solid #1a1a1a;
+}
+
+/* iOS status bar */
+.ios-status-bar {
+    height: 44px;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.status-icons {
+    display: flex;
+    gap: 5px;
+}
+
+/* App header */
+.app-header {
+    background: white;
+    padding: 12px 15px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.app-header h1 {
+    font-size: 26px;
+    font-family: 'Baloo 2', 'Nunito', 'Proxima Soft', 'Comic Sans MS', 'Arial Rounded MT Bold', sans-serif;
+    letter-spacing: 0.5px;
+    color: #5856D6;
+    margin: 0;
+}
+
+/* Main app container */
+.app-container {
+    padding: 10px;
+    height: calc(100% - 144px); /* Adjust for header, status bar, and home button */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Message display */
+.message-container {
+    padding: 0;
+    width: 100%;
+    height: 240px; /* Fixed height for 6 lines of emojis */
+}
+
+.current-message {
+    width: 100%;
+    height: 240px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start; /* Force items to start at the top */
+    gap: 5px; /* Keep spacing constant */
+    row-gap: 2px; /* Minimum spacing between rows */
+    font-size: 30px;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 2px solid #b0b0b0; /* Darker gray border */
+    overflow-y: auto;
+    line-height: 1; /* Reset line height */
+}
+
+/* Category tabs */
+.category-tabs {
+    display: flex;
+    overflow-x: auto;
+    gap: 8px;
+    padding: 3px 0;
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+.category-tabs::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome/Safari/Edge */
+}
+
+.tab {
+    padding: 10px 15px;
+    background-color: #e9e9e9;
+    border-radius: 20px;
+    font-size: 18px;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    gap: 2px;
+}
+
+.tab.active {
+    background-color: #FF9500;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Emoji grid */
+.emoji-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+    padding: 3px 0;
+    overflow-y: auto;
+}
+
+.emoji-btn {
+    font-size: 27px; /* Reduced by 10% from 30px */
+    background-color: #ffffff;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px; /* Slightly smaller radius */
+    width: 45px; /* Reduced by 10% from 50px */
+    height: 45px; /* Reduced by 10% from 50px */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.1s;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
+}
+
+.emoji-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    background-color: #f0f0f0;
+}
+
+/* Control buttons */
+.control-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.control-btn {
+    flex: 1;
+    padding: 7px;
+    border: none;
+    border-radius: 15px;
+    font-size: 24px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px; /* 25% reduction from default height */
+}
+
+.delete-btn {
+    background-color: #FF3B30;
+    color: white;
+}
+
+.new-btn {
+    background-color: #5AC8FA;
+    color: white;
+}
+
+.history-btn {
+    background-color: #007AFF;
+    color: white;
+}
+
+.save-btn {
+    background-color: #34C759;
+    color: white;
+}
+
+.control-btn:active {
+    transform: scale(0.95);
+    opacity: 0.9;
+}
+
+/* History modal */
+.modal {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+    animation: slideUp 0.3s ease;
+    max-height: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.close-modal {
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 15px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.history-item {
+    background-color: #f8f8f8;
+    border-radius: 12px;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.history-item:active {
+    background-color: #e8e8e8;
+}
+
+.history-emojis {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.history-date {
+    font-size: 12px;
+    color: #888;
+}
+
+/* iOS home button */
+.home-button {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    background-color: #f2f2f2;
+}
+
+/* Responsive design */
+@media (max-width: 400px) {
+    .ios-container {
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+        border: none;
+    }
+    
+    .emoji-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .emoji-btn {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+    }
+}
+
+/* Color themes for categories */
+.tab[data-category="faces"] {
+    background-color: #e9e9e9;
+}
+.tab[data-category="faces"].active {
+    background-color: #FF9500;
+}
+
+.tab[data-category="animals"] {
+    background-color: #e9e9e9;
+}
+.tab[data-category="animals"].active {
+    background-color: #FF2D55;
+}
+
+.tab[data-category="food"] {
+    background-color: #e9e9e9;
+}
+.tab[data-category="food"].active {
+    background-color: #5AC8FA;
+}
+
+.tab[data-category="activities"] {
+    background-color: #e9e9e9;
+}
+.tab[data-category="activities"].active {
+    background-color: #4CD964;
+}
+
+.tab[data-category="travel"] {
+    background-color: #e9e9e9;
+}
+.tab[data-category="travel"].active {
+    background-color: #007AFF;
+}
+
+.tab[data-category="objects"] {
+    background-color: #e9e9e9;
+}
+.tab[data-category="objects"].active {
+    background-color: #5856D6;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.001ms !important;
+        transition-duration: 0.001ms !important;
+    }
+}
+
+/* For high contrast mode */
+@media (prefers-contrast: high) {
+    .tab.active {
+        outline: 2px solid black;
+    }
+    
+    .control-btn {
+        border: 2px solid black;
+    }
+}
+
+/* Toast message styles */
+.toast {
+    position: fixed;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    z-index: 1000;
+    font-size: 18px;
+    max-width: 80%;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* PWA Install Button */
+.install-container {
+    position: fixed;
+    bottom: 70px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 900;
+    padding: 10px;
+}
+
+.install-btn {
+    background-color: #5856D6;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 18px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
