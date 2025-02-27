@@ -17,33 +17,16 @@ body {
     padding: 20px;
 }
 
-/* iOS device frame */
-.ios-container {
+/* Main app wrapper */
+.app-wrapper {
     position: relative;
-    width: 375px;
-    height: 750px;
+    width: 100%;
+    max-width: 500px;
+    min-height: 600px;
     background-color: white;
-    border-radius: 40px;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
-    border: 8px solid #1a1a1a;
-}
-
-/* iOS status bar */
-.ios-status-bar {
-    height: 44px;
-    background-color: #f7f7f7;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 16px;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.status-icons {
-    display: flex;
-    gap: 5px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
 /* App header */
@@ -65,11 +48,11 @@ body {
 
 /* Main app container */
 .app-container {
-    padding: 10px;
-    height: calc(100% - 144px); /* Adjust for header, status bar, and home button */
+    padding: 15px;
+    height: calc(100% - 60px); /* Adjust for header only */
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
 }
 
 /* Message display */
@@ -84,17 +67,19 @@ body {
     height: 240px;
     display: flex;
     flex-wrap: wrap;
-    align-content: flex-start; /* Force items to start at the top */
-    gap: 5px; /* Keep spacing constant */
-    row-gap: 2px; /* Minimum spacing between rows */
-    font-size: 30px;
+    align-content: flex-start;
+    justify-content: center; /* Center horizontally */
+    gap: 8px; /* Equal spacing in both directions */
+    row-gap: 8px;
+    font-size: 32px;
     border-radius: 15px;
-    padding: 10px;
-    background-color: white;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    border: 2px solid #b0b0b0; /* Darker gray border */
+    padding: 15px;
+    background-color: #f9f9f9;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    border: 2px solid #b0b0b0;
     overflow-y: auto;
-    line-height: 1; /* Reset line height */
+    line-height: 1.3; /* Improved line spacing */
+    text-align: center;
 }
 
 /* Category tabs */
@@ -102,8 +87,11 @@ body {
     display: flex;
     overflow-x: auto;
     gap: 8px;
-    padding: 3px 0;
+    padding: 5px 0;
     scrollbar-width: none; /* Hide scrollbar for Firefox */
+    justify-content: center;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 .category-tabs::-webkit-scrollbar {
@@ -133,24 +121,28 @@ body {
 .emoji-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 6px;
-    padding: 3px 0;
+    gap: 10px; /* Equal gap for vertical and horizontal spacing */
+    padding: 10px;
     overflow-y: auto;
+    justify-content: center;
+    max-width: 400px;
+    margin: 0 auto; /* Center the grid */
 }
 
 .emoji-btn {
-    font-size: 27px; /* Reduced by 10% from 30px */
+    font-size: 28px;
     background-color: #ffffff;
     border: 2px solid #e0e0e0;
-    border-radius: 10px; /* Slightly smaller radius */
-    width: 45px; /* Reduced by 10% from 50px */
-    height: 45px; /* Reduced by 10% from 50px */
+    border-radius: 12px;
+    width: 50px;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     transition: all 0.1s;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
+    margin: 0 auto; /* Center the button in its grid cell */
 }
 
 .emoji-btn:active {
@@ -162,24 +154,29 @@ body {
 /* Control buttons */
 .control-buttons {
     display: flex;
-    justify-content: space-between;
-    gap: 10px;
+    justify-content: center;
+    gap: 15px;
     margin-top: auto;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .control-btn {
     flex: 1;
-    padding: 7px;
+    padding: 10px;
     border: none;
     border-radius: 15px;
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 36px; /* 25% reduction from default height */
+    height: 50px;
+    max-width: 80px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .delete-btn {
@@ -273,20 +270,29 @@ body {
 }
 
 .history-item {
-    background-color: #f8f8f8;
-    border-radius: 12px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
     padding: 15px;
     cursor: pointer;
     transition: all 0.2s;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
 .history-item:active {
-    background-color: #e8e8e8;
+    background-color: #f0f0f0;
+    transform: scale(0.98);
 }
 
 .history-emojis {
-    font-size: 28px;
-    margin-bottom: 5px;
+    font-size: 30px;
+    margin-bottom: 8px;
+    line-height: 1.3;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
 }
 
 .history-date {
@@ -294,36 +300,41 @@ body {
     color: #888;
 }
 
-/* iOS home button */
-.home-button {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 2px solid #ccc;
-    background-color: #f2f2f2;
-}
-
 /* Responsive design */
-@media (max-width: 400px) {
-    .ios-container {
+@media (max-width: 500px) {
+    .app-wrapper {
         width: 100%;
-        height: 100vh;
+        min-height: 100vh;
         border-radius: 0;
-        border: none;
+        box-shadow: none;
     }
     
     .emoji-grid {
         grid-template-columns: repeat(4, 1fr);
+        max-width: 300px;
+        padding: 8px;
+        gap: 8px;
     }
     
     .emoji-btn {
         width: 100%;
         height: auto;
         aspect-ratio: 1;
+        font-size: 24px;
+    }
+    
+    .app-header h1 {
+        font-size: 24px;
+    }
+    
+    .control-buttons {
+        gap: 10px;
+    }
+    
+    .control-btn {
+        height: 45px;
+        max-width: 70px;
+        font-size: 24px;
     }
 }
 
@@ -410,7 +421,7 @@ body {
 /* PWA Install Button */
 .install-container {
     position: fixed;
-    bottom: 70px;
+    bottom: 20px;
     left: 0;
     right: 0;
     text-align: center;
