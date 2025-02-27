@@ -2,14 +2,15 @@
   "name": "Happy Faces - Toddler Emoji App",
   "short_name": "Happy Faces",
   "description": "A toddler-friendly emoji messaging app for young children",
-  "start_url": "/",
+  "start_url": "./index.html",
+  "scope": ".",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#5856D6",
   "orientation": "portrait",
   "icons": [
     {
-      "src": "icons/app-icon.svg",
+      "src": "./icons/app-icon.svg",
       "sizes": "72x72 96x96 128x128 144x144 152x152 192x192 384x384 512x512",
       "type": "image/svg+xml",
       "purpose": "any"

@@ -132,9 +132,9 @@ body {
     display: grid !important;
     grid-template-columns: repeat(5, 1fr) !important; /* 5 columns */
     grid-template-rows: repeat(4, 1fr) !important; /* 4 rows */
-    gap: min(3vw, 15px); /* Responsive horizontal spacing */
-    row-gap: min(2.5vh, 15px); /* Responsive vertical spacing */
-    padding: 2vh 2vw;
+    gap: min(1.5vw, 6px); /* Minimal horizontal spacing */
+    row-gap: min(1.5vh, 6px); /* Minimal vertical spacing */
+    padding: 1vh 1vw;
     overflow-y: auto;
     width: 100%; /* Use full width */
     margin: 0 auto; /* Center the grid */
@@ -145,19 +145,20 @@ body {
 }
 
 .emoji-btn {
-    font-size: min(7vw, 42px); /* Responsive font size */
+    font-size: min(7vw, 36px); /* Original emoji size */
     background-color: #ffffff;
-    border: 2px solid #e0e0e0;
-    border-radius: min(3vw, 16px);
-    width: min(20vw, 85px); /* Responsive width */
-    height: min(20vw, 85px); /* Responsive height */
+    border: 1px solid #e0e0e0; /* Thin border */
+    border-radius: min(1.5vw, 8px); /* Much smaller rounded corners */
+    width: min(13vw, 50px); /* Much smaller button width */
+    height: min(13vw, 50px); /* Much smaller button height */
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     transition: all 0.1s;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* Lighter shadow */
     margin: 0 auto; /* Center the button in its grid cell */
+    padding: 0; /* No padding - emoji fills the button */
 }
 
 .emoji-btn:active {
@@ -348,21 +349,23 @@ body {
     .emoji-grid {
         grid-template-columns: repeat(5, 1fr); /* 5 columns */
         grid-template-rows: repeat(4, 1fr); /* 4 rows */
-        padding: 10px 5px;
+        padding: 6px 3px;
         height: 50vh;
         max-height: 550px;
         width: 100%; /* Use full width */
-        gap: min(3vw, 16px); /* Horizontal spacing */
-        row-gap: min(3vh, 18px); /* Vertical spacing */
+        gap: min(1.5vw, 5px); /* Minimal horizontal spacing */
+        row-gap: min(1.5vh, 5px); /* Minimal vertical spacing */
         align-content: space-between;
     }
 
     .emoji-btn {
-        font-size: min(8vw, 50px); /* Larger emoji font */
-        width: min(22vw, 100px); /* Wider buttons */
-        height: min(22vw, 100px); /* Taller buttons */
-        border-radius: min(4vw, 20px); /* Larger rounded corners */
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Deeper shadow */
+        font-size: min(7.5vw, 38px); /* Slightly larger emoji than standard view */
+        width: min(13vw, 50px); /* Much smaller button width */
+        height: min(13vw, 50px); /* Much smaller button height */
+        border-radius: min(1.5vw, 8px); /* Much smaller rounded corners */
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Lighter shadow */
+        border: 1px solid #e0e0e0; /* Thin border */
+        padding: 0; /* No internal padding - emoji fills the button */
     }
     
     .message-container {

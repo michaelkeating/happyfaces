@@ -1,15 +1,16 @@
-const CACHE_NAME = 'happy-faces-v1';
+const CACHE_NAME = 'happy-faces-v2';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/styles.css',
-  '/app.js',
-  '/manifest.json',
-  '/offline.html'
+  './',
+  './index.html',
+  './styles.css',
+  './app.js',
+  './manifest.json',
+  './offline.html',
+  './icons/app-icon.svg'
 ];
 
 // Offline fallback page
-const OFFLINE_PAGE = '/offline.html';
+const OFFLINE_PAGE = './offline.html';
 
 // Install service worker and cache assets
 self.addEventListener('install', event => {
@@ -67,7 +68,7 @@ self.addEventListener('fetch', event => {
           .catch(error => {
             // Special handling for image requests or other resource types
             if (event.request.url.match(/\.(jpg|jpeg|png|gif|svg)$/)) {
-              return caches.match('/icons/app-icon.svg');
+              return caches.match('./icons/app-icon.svg');
             }
             console.error('Fetch failed:', error);
           });
