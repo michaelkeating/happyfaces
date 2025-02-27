@@ -120,23 +120,25 @@ body {
 /* Emoji grid */
 .emoji-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columns instead of 5 for larger buttons */
-    gap: 12px; /* Horizontal spacing */
-    row-gap: 16px; /* More vertical spacing */
-    padding: 12px;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: min(4vw, 20px); /* Responsive horizontal spacing */
+    row-gap: min(3vh, 20px); /* Responsive vertical spacing */
+    padding: 4vh 2vw;
     overflow-y: auto;
-    justify-content: center;
-    max-width: 500px; /* Increased to accommodate larger buttons */
+    width: 95%; /* Use almost full width */
     margin: 0 auto; /* Center the grid */
+    height: 50vh; /* Take up half the viewport height */
+    max-height: 500px;
+    align-content: space-between; /* Distribute rows evenly */
 }
 
 .emoji-btn {
-    font-size: 36px; /* ~30% larger font */
+    font-size: min(7vw, 42px); /* Responsive font size */
     background-color: #ffffff;
     border: 2px solid #e0e0e0;
-    border-radius: 14px;
-    width: 70px; /* 40% larger */
-    height: 70px; /* 40% larger */
+    border-radius: min(3vw, 16px);
+    width: min(20vw, 85px); /* Responsive width */
+    height: min(20vw, 85px); /* Responsive height */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -311,22 +313,6 @@ body {
         box-shadow: none;
     }
     
-    .emoji-grid {
-        grid-template-columns: repeat(4, 1fr);
-        max-width: 100%;
-        padding: 8px;
-        gap: 10px;
-        row-gap: 12px;
-    }
-    
-    .emoji-btn {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 1;
-        font-size: 32px;
-        min-width: 0; /* Allows buttons to shrink if needed */
-    }
-    
     .app-header h1 {
         font-size: 24px;
     }
@@ -340,6 +326,61 @@ body {
         max-width: 80px;
         font-size: 28px;
         margin: 0 3px;
+    }
+}
+
+/* High resolution screens like iPhone 16 Pro with 2500x1100px display */
+@media screen and (min-width: 390px) and (min-height: 800px), 
+       screen and (min-width: 1100px) and (min-height: 2000px),
+       screen and (min-width: 2000px) and (min-height: 1100px) {
+    .emoji-grid {
+        grid-template-columns: repeat(4, 1fr);
+        padding: 15px 5px;
+        height: 55vh;
+        max-height: 600px;
+        width: 100%; /* Use full width */
+        gap: min(5vw, 20px); /* Wider spacing */
+        row-gap: min(4vh, 25px); /* Taller spacing */
+        align-content: space-between;
+    }
+
+    .emoji-btn {
+        font-size: min(8vw, 50px); /* Larger emoji font */
+        width: min(22vw, 100px); /* Wider buttons */
+        height: min(22vw, 100px); /* Taller buttons */
+        border-radius: min(4vw, 20px); /* Larger rounded corners */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Deeper shadow */
+    }
+    
+    .message-display {
+        font-size: min(10vw, 55px);
+        min-height: 20vh;
+        max-height: 25vh;
+    }
+    
+    .category-tabs {
+        padding: 15px 10px;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .tab {
+        padding: 14px;
+        border-radius: 18px;
+        margin: 0 5px;
+    }
+    
+    .control-buttons {
+        padding: 15px 0;
+        margin-top: 20px;
+    }
+    
+    .control-btn {
+        height: min(15vw, 70px);
+        width: min(20vw, 90px);
+        font-size: min(8vw, 36px);
+        margin: 0 10px;
+        border-radius: 20px;
     }
 }
 

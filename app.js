@@ -104,8 +104,19 @@ function loadEmojiGrid(category) {
     // Get emojis for the category
     const emojis = emojiCategories[category].emojis;
     
-    // Create emoji buttons
-    emojis.forEach(emoji => {
+    // Adjust grid template columns based on screen size
+    // Modern iPhones like 16 Pro need 4 columns for optimal spacing
+    const columns = 4; 
+    const rowCount = 5; // Arrange in exactly 5 rows
+    
+    // Calculate items per row and total to display
+    const totalToShow = columns * rowCount; // Show exactly enough for 5 rows
+    
+    // Set the grid template columns dynamically
+    emojiGrid.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
+    
+    // Create emoji buttons - limit to show exact number for 5 rows
+    emojis.slice(0, totalToShow).forEach(emoji => {
         const emojiBtn = document.createElement("div");
         emojiBtn.className = "emoji-btn";
         emojiBtn.textContent = emoji;
