@@ -1,4 +1,4 @@
-const CACHE_NAME = 'happy-faces-v2';
+const CACHE_NAME = 'happy-faces-v3';
 const urlsToCache = [
   './',
   './index.html',
@@ -6,7 +6,15 @@ const urlsToCache = [
   './app.js',
   './manifest.json',
   './offline.html',
-  './icons/app-icon.svg'
+  './icons/app-icon.svg',
+  './icons/app-icon72.png',
+  './icons/app-icon96.png',
+  './icons/app-icon128.png',
+  './icons/app-icon144.png',
+  './icons/app-icon152.png',
+  './icons/app-icon192.png',
+  './icons/app-icon384.png',
+  './icons/app-icon512.png'
 ];
 
 // Offline fallback page
