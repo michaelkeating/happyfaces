@@ -120,28 +120,29 @@ body {
 /* Emoji grid */
 .emoji-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px; /* Equal gap for vertical and horizontal spacing */
-    padding: 10px;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns instead of 5 for larger buttons */
+    gap: 12px; /* Horizontal spacing */
+    row-gap: 16px; /* More vertical spacing */
+    padding: 12px;
     overflow-y: auto;
     justify-content: center;
-    max-width: 400px;
+    max-width: 500px; /* Increased to accommodate larger buttons */
     margin: 0 auto; /* Center the grid */
 }
 
 .emoji-btn {
-    font-size: 28px;
+    font-size: 36px; /* ~30% larger font */
     background-color: #ffffff;
     border: 2px solid #e0e0e0;
-    border-radius: 12px;
-    width: 50px;
-    height: 50px;
+    border-radius: 14px;
+    width: 70px; /* 40% larger */
+    height: 70px; /* 40% larger */
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     transition: all 0.1s;
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.08);
     margin: 0 auto; /* Center the button in its grid cell */
 }
 
@@ -167,16 +168,17 @@ body {
     padding: 10px;
     border: none;
     border-radius: 15px;
-    font-size: 26px;
+    font-size: 30px; /* Larger font */
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 50px;
-    max-width: 80px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 60px; /* Taller buttons */
+    max-width: 90px; /* Wider buttons */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    margin: 0 5px; /* Additional spacing */
 }
 
 .delete-btn {
@@ -311,16 +313,18 @@ body {
     
     .emoji-grid {
         grid-template-columns: repeat(4, 1fr);
-        max-width: 300px;
+        max-width: 100%;
         padding: 8px;
-        gap: 8px;
+        gap: 10px;
+        row-gap: 12px;
     }
     
     .emoji-btn {
         width: 100%;
         height: auto;
         aspect-ratio: 1;
-        font-size: 24px;
+        font-size: 32px;
+        min-width: 0; /* Allows buttons to shrink if needed */
     }
     
     .app-header h1 {
@@ -332,9 +336,10 @@ body {
     }
     
     .control-btn {
-        height: 45px;
-        max-width: 70px;
-        font-size: 24px;
+        height: 55px;
+        max-width: 80px;
+        font-size: 28px;
+        margin: 0 3px;
     }
 }
 
