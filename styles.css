@@ -59,12 +59,12 @@ body {
 .message-container {
     padding: 0;
     width: 100%;
-    height: 240px; /* Fixed height for 6 lines of emojis */
+    height: min(35vh, 240px); /* Responsive height based on viewport */
 }
 
 .current-message {
     width: 100%;
-    height: 240px;
+    height: 100%;
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
@@ -84,30 +84,40 @@ body {
 
 /* Category tabs */
 .category-tabs {
-    display: flex;
-    overflow-x: auto;
-    gap: 8px;
-    padding: 5px 0;
-    scrollbar-width: none; /* Hide scrollbar for Firefox */
-    justify-content: center;
-    max-width: 400px;
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(100px, 1fr)) !important; /* 3 columns with minimum width */
+    grid-template-rows: repeat(2, auto) !important; /* 2 rows */
+    gap: 12px !important; /* Gap between category buttons */
+    padding: 10px 5px;
+    width: 100%; /* Use full width */
+    max-width: 500px;
     margin: 0 auto;
-}
-
-.category-tabs::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for Chrome/Safari/Edge */
+    flex-wrap: nowrap !important;
+    overflow: visible !important;
+    justify-content: space-between !important;
 }
 
 .tab {
-    padding: 10px 15px;
+    padding: 10px 5px;
     background-color: #e9e9e9;
     border-radius: 20px;
     font-size: 18px;
-    white-space: nowrap;
     cursor: pointer;
     transition: all 0.2s;
     display: flex;
-    gap: 2px;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center;
+    text-align: center;
+    min-height: 50px;
+    width: 100%;
+}
+
+.tab-emoji {
+    display: inline-block;
+    text-align: center;
+    padding: 0 5px;
+    flex: 1;
+    width: 30%;
 }
 
 .tab.active {
@@ -119,17 +129,19 @@ body {
 
 /* Emoji grid */
 .emoji-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columns */
-    gap: min(4vw, 20px); /* Responsive horizontal spacing */
-    row-gap: min(3vh, 20px); /* Responsive vertical spacing */
-    padding: 4vh 2vw;
+    display: grid !important;
+    grid-template-columns: repeat(5, 1fr) !important; /* 5 columns */
+    grid-template-rows: repeat(4, 1fr) !important; /* 4 rows */
+    gap: min(3vw, 15px); /* Responsive horizontal spacing */
+    row-gap: min(2.5vh, 15px); /* Responsive vertical spacing */
+    padding: 2vh 2vw;
     overflow-y: auto;
-    width: 95%; /* Use almost full width */
+    width: 100%; /* Use full width */
     margin: 0 auto; /* Center the grid */
-    height: 50vh; /* Take up half the viewport height */
-    max-height: 500px;
+    height: 42vh; /* Take up viewport height optimally */
+    max-height: 450px;
     align-content: space-between; /* Distribute rows evenly */
+    grid-auto-flow: row !important;
 }
 
 .emoji-btn {
@@ -334,13 +346,14 @@ body {
        screen and (min-width: 1100px) and (min-height: 2000px),
        screen and (min-width: 2000px) and (min-height: 1100px) {
     .emoji-grid {
-        grid-template-columns: repeat(4, 1fr);
-        padding: 15px 5px;
-        height: 55vh;
-        max-height: 600px;
+        grid-template-columns: repeat(5, 1fr); /* 5 columns */
+        grid-template-rows: repeat(4, 1fr); /* 4 rows */
+        padding: 10px 5px;
+        height: 50vh;
+        max-height: 550px;
         width: 100%; /* Use full width */
-        gap: min(5vw, 20px); /* Wider spacing */
-        row-gap: min(4vh, 25px); /* Taller spacing */
+        gap: min(3vw, 16px); /* Horizontal spacing */
+        row-gap: min(3vh, 18px); /* Vertical spacing */
         align-content: space-between;
     }
 
@@ -352,22 +365,43 @@ body {
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Deeper shadow */
     }
     
-    .message-display {
+    .message-container {
+        height: min(40vh, 300px); /* Taller message area for bigger screens */
+    }
+    
+    .current-message {
         font-size: min(10vw, 55px);
-        min-height: 20vh;
-        max-height: 25vh;
+        padding: 20px;
     }
     
     .category-tabs {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 columns */
+        grid-template-rows: repeat(2, auto); /* 2 rows */
+        gap: 16px; /* More space between buttons */
         padding: 15px 10px;
-        justify-content: space-between;
         width: 100%;
+        max-width: 500px;
     }
 
     .tab {
-        padding: 14px;
+        padding: 15px 10px;
         border-radius: 18px;
-        margin: 0 5px;
+        margin: 0;
+        min-height: 60px;
+        font-size: 20px;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        justify-content: center; /* Center the content horizontally */
+        align-items: center;
+    }
+    
+    .tab-emoji {
+        display: inline-block;
+        text-align: center;
+        padding: 0 4px;
+        font-size: 22px;
+        flex: 1;
+        width: 30%;
     }
     
     .control-buttons {

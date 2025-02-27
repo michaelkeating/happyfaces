@@ -26,18 +26,42 @@
                 <div id="current-message" class="current-message"></div>
             </div>
 
-            <!-- Category tabs -->
-            <div class="category-tabs">
-                <div class="tab active" data-category="faces">😊😄😍</div>
-                <div class="tab" data-category="animals">🐶🐱🦁</div>
-                <div class="tab" data-category="food">🍎🍕🍦</div>
-                <div class="tab" data-category="activities">⚽️🎨🏊</div>
-                <div class="tab" data-category="travel">🚗✈️🚢</div>
-                <div class="tab" data-category="objects">🎮📱💻</div>
+            <!-- Category tabs - 2 rows, 3 columns -->
+            <div class="category-tabs" style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, auto);">
+                <div class="tab active" data-category="faces" style="grid-column: 1; grid-row: 1; display: flex; justify-content: center;">
+                    <span class="tab-emoji">😊</span>
+                    <span class="tab-emoji">😄</span>
+                    <span class="tab-emoji">😍</span>
+                </div>
+                <div class="tab" data-category="animals" style="grid-column: 2; grid-row: 1; display: flex; justify-content: center;">
+                    <span class="tab-emoji">🐶</span>
+                    <span class="tab-emoji">🐱</span>
+                    <span class="tab-emoji">🦁</span>
+                </div>
+                <div class="tab" data-category="food" style="grid-column: 3; grid-row: 1; display: flex; justify-content: center;">
+                    <span class="tab-emoji">🍎</span>
+                    <span class="tab-emoji">🍕</span>
+                    <span class="tab-emoji">🍦</span>
+                </div>
+                <div class="tab" data-category="activities" style="grid-column: 1; grid-row: 2; display: flex; justify-content: center;">
+                    <span class="tab-emoji">⚽️</span>
+                    <span class="tab-emoji">🎨</span>
+                    <span class="tab-emoji">🏊</span>
+                </div>
+                <div class="tab" data-category="travel" style="grid-column: 2; grid-row: 2; display: flex; justify-content: center;">
+                    <span class="tab-emoji">🚗</span>
+                    <span class="tab-emoji">✈️</span>
+                    <span class="tab-emoji">🚢</span>
+                </div>
+                <div class="tab" data-category="objects" style="grid-column: 3; grid-row: 2; display: flex; justify-content: center;">
+                    <span class="tab-emoji">🎮</span>
+                    <span class="tab-emoji">📱</span>
+                    <span class="tab-emoji">💻</span>
+                </div>
             </div>
 
-            <!-- Emoji grid -->
-            <div class="emoji-grid" id="emoji-grid">
+            <!-- Emoji grid - 5 columns, 4 rows -->
+            <div class="emoji-grid" id="emoji-grid" style="display: grid; grid-template-columns: repeat(5, 1fr); grid-template-rows: repeat(4, 1fr);">
                 <!-- Emojis will be loaded here by JavaScript -->
             </div>
 
